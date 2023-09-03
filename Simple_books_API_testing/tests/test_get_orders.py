@@ -24,5 +24,8 @@ class TestGetOrders(unittest.TestCase):
         expected_order_id = order_id
         self.assertEqual(expected_status_code, response.status_code)
         self.assertEqual(expected_order_id, response.json()[0]['id'])
+        # --> response.json() - este o lista, pt a accesa id-ul
+        # trebuie accesat primul element din lista si abia dupa cheia "id" din dictionar
+
 
 
