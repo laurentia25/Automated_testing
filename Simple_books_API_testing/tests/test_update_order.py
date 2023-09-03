@@ -4,6 +4,9 @@ from API_requests.simple_books_requests import SimpleBooksRequests
 
 
 class TestUpdateOrder(unittest.TestCase):
+    """
+    Testam ruta UPDATE /orders/{order_id}
+    """
     def setUp(self) -> None:
         self.request_handler = SimpleBooksRequests()
 
