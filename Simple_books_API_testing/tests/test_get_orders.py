@@ -17,7 +17,7 @@ class TestGetOrders(unittest.TestCase):
         - status code este 200
         - ca obtinem in response orderId plasat
         """
-        place_order = self.request_handler.submit_order(1, 'Laurentia')
+        place_order = self.request_handler.submit_order(book_id=1, customer_name='Laurentia')
         order_id = place_order.json()['orderId']
         response = self.request_handler.get_all_orders()
         expected_status_code = 200

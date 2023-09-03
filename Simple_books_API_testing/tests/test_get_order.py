@@ -17,7 +17,7 @@ class TestGetOrder(unittest.TestCase):
         - status code este 200
         - Id-ul comenzii interogate este egal cu Id-ul comenzii plasate
         """
-        place_order = self.request_handler.submit_order(5, 'Laurentia')
+        place_order = self.request_handler.submit_order(book_id=5, customer_name='Laurentia')
         order_id = place_order.json()['orderId']
         response = self.request_handler.get_order_by_id(order_id=order_id)
         expected_status_code = 200

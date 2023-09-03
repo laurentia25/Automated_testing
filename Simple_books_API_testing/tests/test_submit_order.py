@@ -29,7 +29,7 @@ class TestSubmitOrder(unittest.TestCase):
         - status code este 404
         - mesajul de eroare este cel asteptat
         """
-        response = self.request_handler.submit_order(2, 'Laurentia')
+        response = self.request_handler.submit_order(book_id=2, customer_name='Laurentia')
         expected_status_code = 404
         expected_error_msg = "This book is not in stock. Try again later."
         self.assertEqual(expected_status_code, response.status_code)
@@ -41,7 +41,7 @@ class TestSubmitOrder(unittest.TestCase):
         - status code este 400
         - mesajul de eroare este cel asteptat
         """
-        response = self.request_handler.submit_order(100, 'Laurentia')
+        response = self.request_handler.submit_order(book_id=100, customer_name='Laurentia')
         expected_status_code = 400
         expected_error_msg = "Invalid or missing bookId."
         self.assertEqual(expected_status_code, response.status_code)
