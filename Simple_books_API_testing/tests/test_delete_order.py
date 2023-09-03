@@ -34,7 +34,7 @@ class TestDeleteOrder(unittest.TestCase):
         - status code este 404
         - mesajul de eroare este cel asteptat
         """
-        order_id = 'eeeeeeeeeee'
+        order_id = 'sssssssssssss'
         response = self.request_handler.delete_order(order_id=order_id)
         expected_status_code = 404
         expected_error_msg = f'No order with id {order_id}.'
