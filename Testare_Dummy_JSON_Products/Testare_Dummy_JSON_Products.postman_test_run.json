@@ -1,0 +1,802 @@
+{
+	"id": "41a73b5d-e87e-46bf-b625-43d88e948ede",
+	"name": "Testare_Dummy_JSON_Products",
+	"timestamp": "2023-09-16T11:25:55.584Z",
+	"collection_id": "28412804-3a6f438a-6791-4161-831f-2da9798a5ef0",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 55,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-09-16T11:25:48.828Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "83ca96a4-a861-451b-8104-3f03c8b8b530",
+			"name": "Get_all_products(no params provided)",
+			"url": "https://dummyjson.com/products",
+			"time": 182,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Status code name is OK": true,
+				"Response length check": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response length check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				182
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Status code name is OK": true,
+					"Response length check": true
+				}
+			]
+		},
+		{
+			"id": "0f3315d9-8150-4c6a-9226-3f27cffff051",
+			"name": "Get a list of products when valid select params provided",
+			"url": "https://dummyjson.com/products?select=title,price",
+			"time": 182,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 5s": true,
+				"Check dict keys": true,
+				"Limit check": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check dict keys": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Limit check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				182
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 5s": true,
+					"Check dict keys": true,
+					"Limit check": true
+				}
+			]
+		},
+		{
+			"id": "818ee766-6783-4e79-b8e9-ee5663af90a3",
+			"name": "Get a list of products when invalid select params provided",
+			"url": "https://dummyjson.com/products?select=name",
+			"time": 177,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 5s": true,
+				"Body doesn't contain 'name'": true,
+				"Limit check": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body doesn't contain 'name'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Limit check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				177
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 5s": true,
+					"Body doesn't contain 'name'": true,
+					"Limit check": true
+				}
+			]
+		},
+		{
+			"id": "39cbc2c4-f468-4ff1-9ffa-bb1260835275",
+			"name": "Get_a_single_product_by_a_valid_id",
+			"url": "https://dummyjson.com/products/17",
+			"time": 179,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 5s": true,
+				"Value for ID coresponds to q params": true,
+				"Body contains string 'brand'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Value for ID coresponds to q params": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string 'brand'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				179
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 5s": true,
+					"Value for ID coresponds to q params": true,
+					"Body contains string 'brand'": true
+				}
+			]
+		},
+		{
+			"id": "39ed9fa0-baf9-4bc3-992e-744b3e14074c",
+			"name": "Get a single product by invalid id",
+			"url": "https://dummyjson.com/products/101",
+			"time": 201,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 5s": true,
+				"Check err msg": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check err msg": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				201
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 5s": true,
+					"Check err msg": true
+				}
+			]
+		},
+		{
+			"id": "e6098df4-f839-4d58-ad3d-31c4ece83c75",
+			"name": "Get products that exists in DB",
+			"url": "https://dummyjson.com/products/search?q=phone",
+			"time": 200,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body contains string 'phone'": true,
+				"Count results": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string 'phone'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Count results": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				200
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body contains string 'phone'": true,
+					"Count results": true
+				}
+			]
+		},
+		{
+			"id": "f0fae9fd-c23e-483a-8682-f25650696f84",
+			"name": "Get products that not exist in DB",
+			"url": "https://dummyjson.com/products/search?q=abcs",
+			"time": 179,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 5s": true,
+				"Count results": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Count results": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				179
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 5s": true,
+					"Count results": true
+				}
+			]
+		},
+		{
+			"id": "46216c43-200e-405e-87e2-49de1559578b",
+			"name": "Get_list_of_products_when_1>limit<100| skip = 10",
+			"url": "https://dummyjson.com/products?limit=35&skip=10",
+			"time": 179,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 5s": true,
+				"Skip key value": true,
+				"Length of the response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Skip key value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Length of the response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				179
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 5s": true,
+					"Skip key value": true,
+					"Length of the response": true
+				}
+			]
+		},
+		{
+			"id": "95de2a33-1b8a-4984-9ee7-12179b5d7f04",
+			"name": "Get list of products when limit>100| skip<0",
+			"url": "https://dummyjson.com/products?limit=101&skip=-3",
+			"time": 181,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Count products": true,
+				"First product ID": true
+			},
+			"testPassFailCounts": {
+				"Count products": {
+					"pass": 1,
+					"fail": 0
+				},
+				"First product ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				181
+			],
+			"allTests": [
+				{
+					"Count products": true,
+					"First product ID": true
+				}
+			]
+		},
+		{
+			"id": "424b330c-d666-40fa-98ea-67b91ce77c04",
+			"name": "Get list of products when limit<0 | skip > 0",
+			"url": "https://dummyjson.com/products?limit=-7&skip=2",
+			"time": 180,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check first product id": true,
+				"Count products": true
+			},
+			"testPassFailCounts": {
+				"Check first product id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Count products": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				180
+			],
+			"allTests": [
+				{
+					"Check first product id": true,
+					"Count products": true
+				}
+			]
+		},
+		{
+			"id": "86bab38a-5fe6-4a6e-a47c-7b955cc850b6",
+			"name": "Get all products categories",
+			"url": "https://dummyjson.com/products/categories",
+			"time": 178,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check categories": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Check categories": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				178
+			],
+			"allTests": [
+				{
+					"Check categories": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "a04a960f-ff5e-4dc7-b2c6-a18f44268ddf",
+			"name": "Get products by a valid category",
+			"url": "https://dummyjson.com/products/category/smartphones",
+			"time": 183,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check category": true,
+				"Status code is 200": true,
+				"Response time is less than 5s": true
+			},
+			"testPassFailCounts": {
+				"Check category": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				183
+			],
+			"allTests": [
+				{
+					"Check category": true,
+					"Status code is 200": true,
+					"Response time is less than 5s": true
+				}
+			]
+		},
+		{
+			"id": "622f150b-e3c4-47e0-92bd-8304dc3e22a4",
+			"name": "Get products by a invalid category",
+			"url": "https://dummyjson.com/products/category/aaaaaaaaaaaa",
+			"time": 181,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Invalid category": true
+			},
+			"testPassFailCounts": {
+				"Invalid category": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				181
+			],
+			"allTests": [
+				{
+					"Invalid category": true
+				}
+			]
+		},
+		{
+			"id": "c3a7f656-4a12-45e7-8f51-b433b3ebf5e5",
+			"name": "Add a product",
+			"url": "https://dummyjson.com/products/add",
+			"time": 180,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check value for 'title' key": true,
+				"Check id": true,
+				"Status code is 200": true,
+				"Response time is less than 5s": true
+			},
+			"testPassFailCounts": {
+				"Check value for 'title' key": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				180
+			],
+			"allTests": [
+				{
+					"Check value for 'title' key": true,
+					"Check id": true,
+					"Status code is 200": true,
+					"Response time is less than 5s": true
+				}
+			]
+		},
+		{
+			"id": "5874abfe-3371-420d-b992-faab7bcd9122",
+			"name": "Update a product that exists in DB",
+			"url": "https://dummyjson.com/products/33",
+			"time": 178,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 5s": true,
+				"Check value for 'title' key": true,
+				"Check id": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check value for 'title' key": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				178
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 5s": true,
+					"Check value for 'title' key": true,
+					"Check id": true
+				}
+			]
+		},
+		{
+			"id": "ab9d2897-63df-4c63-b111-acec3040b1cf",
+			"name": "Update a product that not exists in DB",
+			"url": "https://dummyjson.com/products/105",
+			"time": 178,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 5s": true,
+				"Check err msg": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check err msg": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				178
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 5s": true,
+					"Check err msg": true
+				}
+			]
+		},
+		{
+			"id": "7b4cf791-b496-4561-961c-29f0ba78e527",
+			"name": "Delete a product that exists in DB",
+			"url": "https://dummyjson.com/products/10",
+			"time": 177,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 5s": true,
+				"check isDeleted": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check isDeleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				177
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 5s": true,
+					"check isDeleted": true
+				}
+			]
+		},
+		{
+			"id": "ffbbbea0-7f3b-4cb8-8c70-89b13c179539",
+			"name": "Delete a product that not exists in DB",
+			"url": "https://dummyjson.com/products/107",
+			"time": 178,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 5s": true,
+				"Check err msg": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 5s": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check err msg": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				178
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 5s": true,
+					"Check err msg": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3273,
+	"collection": {
+		"requests": [
+			{
+				"id": "83ca96a4-a861-451b-8104-3f03c8b8b530",
+				"method": "GET"
+			},
+			{
+				"id": "0f3315d9-8150-4c6a-9226-3f27cffff051",
+				"method": "GET"
+			},
+			{
+				"id": "818ee766-6783-4e79-b8e9-ee5663af90a3",
+				"method": "GET"
+			},
+			{
+				"id": "39cbc2c4-f468-4ff1-9ffa-bb1260835275",
+				"method": "GET"
+			},
+			{
+				"id": "39ed9fa0-baf9-4bc3-992e-744b3e14074c",
+				"method": "GET"
+			},
+			{
+				"id": "e6098df4-f839-4d58-ad3d-31c4ece83c75",
+				"method": "GET"
+			},
+			{
+				"id": "f0fae9fd-c23e-483a-8682-f25650696f84",
+				"method": "GET"
+			},
+			{
+				"id": "46216c43-200e-405e-87e2-49de1559578b",
+				"method": "GET"
+			},
+			{
+				"id": "95de2a33-1b8a-4984-9ee7-12179b5d7f04",
+				"method": "GET"
+			},
+			{
+				"id": "424b330c-d666-40fa-98ea-67b91ce77c04",
+				"method": "GET"
+			},
+			{
+				"id": "86bab38a-5fe6-4a6e-a47c-7b955cc850b6",
+				"method": "GET"
+			},
+			{
+				"id": "a04a960f-ff5e-4dc7-b2c6-a18f44268ddf",
+				"method": "GET"
+			},
+			{
+				"id": "622f150b-e3c4-47e0-92bd-8304dc3e22a4",
+				"method": "GET"
+			},
+			{
+				"id": "c3a7f656-4a12-45e7-8f51-b433b3ebf5e5",
+				"method": "POST"
+			},
+			{
+				"id": "5874abfe-3371-420d-b992-faab7bcd9122",
+				"method": "PATCH"
+			},
+			{
+				"id": "ab9d2897-63df-4c63-b111-acec3040b1cf",
+				"method": "PATCH"
+			},
+			{
+				"id": "7b4cf791-b496-4561-961c-29f0ba78e527",
+				"method": "DELETE"
+			},
+			{
+				"id": "ffbbbea0-7f3b-4cb8-8c70-89b13c179539",
+				"method": "DELETE"
+			}
+		]
+	}
+}
